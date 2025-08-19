@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'library',  # Your library app
-    'djongo',  # If using MongoDB, otherwise remove this line
+    
 ]
 
 MIDDLEWARE = [
@@ -82,10 +82,16 @@ WSGI_APPLICATION = 'library_management.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'library_db',
+        'CLIENT': {
+            'host': 'mongodb+srv://ankulmaurya88:Ck7rVVDhPIIPTK47@cluster.ir1b8af.mongodb.net/?retryWrites=true&w=majority&appName=cluster',
+            'username': 'ankulmaurya88',
+            'password': 'Ck7rVVDhPIIPTK47',
+        }
     }
 }
+
 
 
 # Password validation
